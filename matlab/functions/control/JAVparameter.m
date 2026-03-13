@@ -38,3 +38,6 @@ delta_pitch_saturation = pi/4;
 
 %Referanseverdier
 z_ref = 150;
+x_ref = 2000;
+y_ref = 50;
+beta_ref = 0;
