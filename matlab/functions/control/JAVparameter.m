@@ -20,13 +20,16 @@ v_z0 = 0;
 v_x0 = 0;
 
 %Regulator verdier
-Kp = 10.0;
-Kd = 3.0;
-Kz_feil = 0.05;
-Kz_demp = 0.04;
+Kp_pitch = 40.0; %Indre sløyfe PD verdier
+Kd_pitch = 15.0;
 
-theta_ref_saturation = 0.2;
-delta_pitch_saturation = pi/8;
+Kp_altitude = 0.08; %Ytre sløyfe PI verdier
+Ki_altitude = 0.001;
+Kd_altitude = 0.05;
+
+theta_ff = asin((m*g)/T); %Skal egtl bruke F_aksial istedenfor T, men har minimalt å si
+theta_ref_saturation = 1;
+delta_pitch_saturation = pi/4;
 
 %Referanseverdier
 z_ref = 150;
