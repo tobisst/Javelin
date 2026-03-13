@@ -19,6 +19,11 @@ v0 = 0;
 v_z0 = 0;
 v_x0 = 0;
 
+phi0 = 0;
+phi_dot0 = 0;
+v_y0 = 0;
+y0 = 0;
+
 %Regulator verdier
 Kp_pitch = 60.0; %Indre sløyfe PD verdier
 Kd_pitch = 20.0;
