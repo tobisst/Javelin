@@ -1,0 +1,3 @@
+%javscript
+
+betaRef = 0;
