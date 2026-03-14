@@ -36,8 +36,15 @@ theta_ff = asin((m*g)/T); %Skal egtl bruke F_aksial istedenfor T, men har minima
 theta_ref_saturation = 0.8;
 delta_pitch_saturation = pi/4;
 
+delta_yaw_saturation = pi/4;
+
+Kp_yaw = 30.0;
+Ki_yaw = 50;
+Kd_yaw = 15.0;
+
 %Referanseverdier
 z_ref = 150;
 x_ref = 2000;
 y_ref = 50;
 beta_ref = 0;
+alpha_ref = 1.4; %vinkelen mot målet i xz planet i radianer, ca 80%
