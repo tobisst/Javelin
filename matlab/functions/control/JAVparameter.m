@@ -13,7 +13,7 @@ I_treghet = (1/12)*m*length^2;
 %startverdier
 x0 = 0;
 z0 = 0;
-theta0 = pi/8; %startvinkel
+theta0 = 0.26; %startvinkel
 theta_dot = 0; %start vinkelhastighet
 v0 = 0;
 v_z0 = 0;
@@ -25,15 +25,15 @@ v_y0 = 0;
 y0 = 0;
 
 %Regulator verdier
-Kp_pitch = 60.0; %Indre sløyfe PD verdier
-Kd_pitch = 20.0;
+Kp_pitch = 40.0; %Indre sløyfe PD verdier
+Kd_pitch = 15.0;
 
-Kp_altitude = 0.05; %Ytre sløyfe PI verdier
-Ki_altitude = 0.05;
-Kd_altitude = 0.02;
+Kp_altitude = 0.1; %Ytre sløyfe PID verdier
+Ki_altitude = 0.01;
+Kd_altitude = 0.08;
 
 theta_ff = asin((m*g)/T); %Skal egtl bruke F_aksial istedenfor T, men har minimalt å si
-theta_ref_saturation = 0.8;
+theta_ref_saturation = 0.6;
 delta_pitch_saturation = pi/4;
 
 delta_yaw_saturation = pi/4;
