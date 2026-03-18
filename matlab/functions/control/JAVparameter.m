@@ -11,13 +11,15 @@ K_drag = 0.005; % kg/m
 g = 9.81;
 I_treghet = (1/12)*m*length^2;
 
-areal_finne = 0.06*0.12 %cm^2
+areal_finne = 0.06*0.12; %cm^2
+
 
 %startverdier
 x0 = 0;
 z0 = 0;
 theta0 = 0.26; %startvinkel
 theta_dot = 0; %start vinkelhastighet
+v_angle = 0;
 v0 = 0;
 v_z0 = 0;
 v_x0 = 0;
