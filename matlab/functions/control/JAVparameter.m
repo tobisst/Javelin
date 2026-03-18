@@ -1,3 +1,4 @@
+%statiske verdier
 T = 1500; %1500 - 2500 netwon
 m = 11.8;
 length = 1.1; % 1.1m
@@ -9,6 +10,8 @@ K_finne = 0.5; % kg/rad
 K_drag = 0.005; % kg/m
 g = 9.81;
 I_treghet = (1/12)*m*length^2;
+
+areal_finne = 0.06*0.12 %cm^2
 
 %startverdier
 x0 = 0;
@@ -35,6 +38,11 @@ Kd_altitude = 0.02;
 theta_ff = asin((m*g)/T); %Skal egtl bruke F_aksial istedenfor T, men har minimalt å si
 theta_ref_saturation = 0.8;
 delta_pitch_saturation = pi/4;
+
+
+
+
+
 
 %Referanseverdier
 z_ref = 150;
