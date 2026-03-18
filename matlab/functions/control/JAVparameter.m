@@ -7,11 +7,19 @@ L_cm = 0.45; % antar senter av massen er 45 cm fra tuppen
 L_aksial = length - L_cm;
 L_hypotenus = sqrt(L_aksial^2 + (diameter/2)^2);
 K_finne = 0.5; % kg/rad
-K_drag = 0.005; % kg/m
+
+
+%Luftmotsand
+%K_drag = 0.5 * Cd * rho * A
+Cd = 0.25;          % Luftmotstandstall [-]
+rho = 1.225;         % Lufttetthet [kg/m^3] 
+
+
+
 g = 9.81;
 I_treghet = (1/12)*m*length^2;
 
-areal_finne = 0.06*0.12; %cm^2
+areal_finne = 0.06*0.12; %m^2
 
 
 %startverdier
