@@ -1,5 +1,5 @@
 %statiske verdier
-T = 1500; %1500 - 2500 netwon
+T = 2500; %1500 - 2500 netwon
 m = 11.8;
 length = 1.1; % 1.1m
 diameter = 0.127; %12.7 cm
@@ -17,7 +17,7 @@ areal_finne = 0.06*0.12; %cm^2
 %startverdier
 x0 = 0;
 z0 = 0;
-theta0 = theta_ff; %startvinkel
+theta0 = pi/64; %startvinkel
 theta_dot = 0; %start vinkelhastighet
 v_angle = 0;
 v0 = 0;
@@ -33,13 +33,13 @@ y0 = 0;
 Kp_pitch = 2.0; %Indre sløyfe PD verdier
 Kd_pitch = 5.0;
 
-Kp_altitude = 0.0005;
-Ki_altitude = 0.00005;   % veldig forsiktig
-Kd_altitude = 0.005;
+Kp_altitude = 0.001;
+Ki_altitude = 0.0001;
+Kd_altitude = 0.008;
 
 theta_ff = asin((m*g)/T); %Skal egtl bruke F_aksial istedenfor T, men har minimalt å si
-theta_ref_saturation_up = 0.2;
-theta_ref_saturation_down = -0.1;
+theta_ref_saturation_up = 0.6;
+theta_ref_saturation_down = -0.25;
 
 delta_pitch_saturation = pi/4;
 
@@ -64,7 +64,7 @@ A_front = pi*(diameter/2)^2;
 
 A_side = diameter * length;
 
-Cd = 0.25; 
+Cd_front = 0.25; 
 rho = 1.225;
 Cd_side = 0.025;
 
