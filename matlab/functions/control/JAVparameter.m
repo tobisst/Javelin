@@ -1,5 +1,5 @@
 %statiske verdier
-T = 2500; %1500 - 2500 netwon
+T = 1500; %1500 - 2500 netwon
 m = 11.8;
 length = 1.1; % 1.1m
 diameter = 0.127; %12.7 cm
@@ -17,7 +17,7 @@ areal_finne = 0.06*0.12; %cm^2
 %startverdier
 x0 = 0;
 z0 = 0;
-theta0 = pi/64; %startvinkel
+theta0 = 0.35; %startvinkel
 theta_dot = 0; %start vinkelhastighet
 v_angle = 0;
 v0 = 0;
@@ -30,7 +30,7 @@ v_y0 = 0;
 y0 = 0;
 
 %Regulator verdier
-Kp_pitch = 2.0; %Indre sløyfe PD verdier
+Kp_pitch = 1.0; %Indre sløyfe PD verdier
 Kd_pitch = 5.0;
 
 Kp_altitude = 0.001;
@@ -67,7 +67,7 @@ A_side = diameter * length;
 Cd_front = 0.25; 
 rho = 1.225;
 Cd_side = 0.025;
-
+theta_launch_slope = - (theta0 - theta_ff) / 5;
 
 
 % Fysiske parametre
