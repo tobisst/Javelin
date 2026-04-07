@@ -105,4 +105,5 @@ theta_ref_saturation_down = -0.25;
 
 % Pitch PD med god demping
 Kp_pitch = 2;
-Kd_pitch = 10;
+
+Kd_pitch =8.2;
