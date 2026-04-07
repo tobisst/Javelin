@@ -6,7 +6,7 @@ diameter = 0.127; %12.7 cm
 L_cm = 0.45; % antar senter av massen er 45 cm fra tuppen
 L_aksial = length - L_cm;
 L_hypotenus = sqrt(L_aksial^2 + (diameter/2)^2);
-K_finne = 0.5; % kg/rad
+K_finne = 0.3; % kg/rad
 K_drag = 0.005; % kg/m
 g = 9.81;
 I_treghet = (1/12)*m*length^2;
@@ -17,7 +17,7 @@ areal_finne = 0.06*0.12; %cm^2
 %startverdier
 x0 = 0;
 z0 = 0;
-theta0 = 0.35; %startvinkel
+%theta0 = theta_ff; %startvinkel
 theta_dot = 0; %start vinkelhastighet
 v_angle = 0;
 v0 = 0;
@@ -30,16 +30,10 @@ v_y0 = 0;
 y0 = 0;
 
 %Regulator verdier
-Kp_pitch = 1.0; %Indre sløyfe PD verdier
-Kd_pitch = 5.0;
 
-Kp_altitude = 0.001;
-Ki_altitude = 0.0001;
-Kd_altitude = 0.008;
+
 
 theta_ff = asin((m*g)/T); %Skal egtl bruke F_aksial istedenfor T, men har minimalt å si
-theta_ref_saturation_up = 0.6;
-theta_ref_saturation_down = -0.25;
 
 delta_pitch_saturation = pi/4;
 
@@ -67,7 +61,7 @@ A_side = diameter * length;
 Cd_front = 0.25; 
 rho = 1.225;
 Cd_side = 0.025;
-theta_launch_slope = - (theta0 - theta_ff) / 5;
+
 
 
 % Fysiske parametre
@@ -80,3 +74,35 @@ theta_launch_slope = - (theta0 - theta_ff) / 5;
 %Kp_pitch = 2; Kd_pitch = 5; N_filter = 10
 %%theta_ff = asin(m*g/T); theta0 = theta_ff; z0 = 0; x0 = 0
 %z_ref = 150; Rate Limiter: ±10 m/s"""
+
+
+%Kp_altitude = 0.001;
+%Ki_altitude = 0.0001;
+%Kd_altitude = 0.008;
+%theta_ref_saturation_up = 0.6;
+%theta_ref_saturation_down = -0.25;
+
+
+% Oppskytning
+theta0 = 0.2;          % lavere startvinkel (12°, ikke 20°)
+theta_launch_slope = -(theta0 - theta_ff) / 2;
+theta_launch_min = 0;   % ramp bare ned til horisontalt
+
+
+z_blend_start = 0;
+z_blend_end = 80;
+
+theta0 = 0.2;
+
+% PID som fungerte:
+Kp_altitude = 0.001;
+Ki_altitude = 0.0001;
+Kd_altitude = 0.008;
+
+% Stram saturering
+theta_ref_saturation_up = 0.25;
+theta_ref_saturation_down = -0.25;
+
+% Pitch PD med god demping
+Kp_pitch = 2;
+Kd_pitch = 10;
