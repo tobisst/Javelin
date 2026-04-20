@@ -95,15 +95,16 @@ z_blend_end = 80;
 theta0 = 0.2;
 
 % PID som fungerte:
-Kp_altitude = 0.001;
-Ki_altitude = 0.0001;
-Kd_altitude = 0.008;
+Kp_altitude = 0.0005;   % ned fra 0.001  (halvvert)
+Ki_altitude = 0.00003;  % ned fra 0.0001 (tredjedel)
+Kd_altitude = 0.003;    % ned fra 0.008  (halvert)
 
 % Stram saturering
-theta_ref_saturation_up = 0.25;
-theta_ref_saturation_down = -0.25;
+theta_ref_saturation_up   =  0.15;  % ned fra 0.25
+theta_ref_saturation_down = -0.15;  % ned fra -0.25
 
 % Pitch PD med god demping
 Kp_pitch = 2;
 
-Kd_pitch =8.2;
+Kd_pitch =5; %8.2;
+
