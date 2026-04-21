@@ -16,7 +16,7 @@ areal_finne = 0.06*0.12; %cm^2
 
 %startverdier
 x0 = 0;
-z0 = 0;
+z0 = 0.1;
 theta0 = pi/50; %startvinkel
 theta_dot = 0; %start vinkelhastighet
 v_angle = 0;
